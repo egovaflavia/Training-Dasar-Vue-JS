@@ -1,0 +1,15 @@
+Direktif v-bind digunakan untuk data binding atau update nilai dari atirubut
+
+Hubungan antara html dengan script vue di sebut dengan binding
+
+v-bind = Binding satu arah, meskipun mengubah nilai input kode yang ada di javascript tidak akan berubah
+
+v-model = Binding dua arah kebalikan satu arah
+
+Prefix menggunakan v- di awal di sebut dengan Direktif
+
+Note: 
+Saat kamu membuat aplikasi dengan Vue, maka wajib hukumnya membuat vue instance atau objek app.
+Vuejs bersifat reaktif, saat datanya berubah maka elemennya akan di-render ulang
+Binding data di Vue ada dua cara, yakni satu arah dan dua arah
+Binding data di Vue dilakukan dengan menggunakan direktif.

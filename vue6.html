@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue #5: Direktif unutk kondisi</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="order-detail">
+            <p>Ini adalah detail dari pesanan Anda :</p>
+            <hr>
+            <img :src="cover" width="100">
+            <h4>{{ name }}</h4>
+            Qty : <input type="number" v-model:value="qty" min="1" max="10">
+            Total : Rp. {{ price * qty }}
+        </div>
+        <hr>
+        <label><input type="checkbox" v-model:value="showBonus"></label>
+        <div class="detail" v-if="showBonus">
+            <p v-if="qty >= 10">Maaf kamu tidak boleh beli {{ qty }} yah... soalnya kita tidak punya banyak stok</p>
+            <p v-else-if="qty >= 5">Whoaa tukang borong nih</p>
+            <p v-else-if="qty >= 2">Selamat! kamu mendapat bonus karena membeli buku {{qty}} buku</p>
+            <p v-else>Beli lebih bnayak lagi agar mendapat bonus</p>
+        </div>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                showBonus: true,
+                name: "Buku Vue JS untuk pemula",
+                cover: "https://www.petanikode.com/img/buku/vuejs.png",
+                price: 1400000,
+                qty: 1
+            }
+        })
+    </script>
+</body>
+
+</html>

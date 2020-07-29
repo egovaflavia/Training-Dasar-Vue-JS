@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue #3: Latihan Directive pada Vue</title>
+
+    <!-- Menyisipkan Vuejs dari CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <!-- Elemen kontainer dalam aplikasi -->
+    <div id="app">
+        <div>
+            <input type="url" v-model:value="url" placeholder="Link Gambar"> <br>
+            <input type="text" v-model:value="caption.text" placeholder="Caption Untuk Image"> <br>
+            <input type="text" v-model:value="caption.nama" placeholder="Isikan Nama Anda"> <br>
+            <input type="text" v-model:value="caption.belajar" placeholder="Belajar Apa Anda"> <br>
+            Berikan Caption Pada Attribute
+            <select v-model:value="caption.attr">
+                <option>title</option>
+                <option>alt</option>
+            </select> <br>
+            <select v-model:value="caption.agama">
+                <option>Islam</option>
+                <option>Kristen</option>
+                <option>Hindu</option>
+                <option>Buddha</option>
+            </select> <br>
+            <!-- Menggunakan argumen statis dan dinamis -->
+            <img v-bind:src="url" v-bind:[caption.attr]="caption.text"> <br>
+            <p>Caption di berikan kepada attribute <code>{{ caption.attr }}</code> dengan isi "{{ caption.text }}"</p>
+            <p>Hallo Nama Saya adalah {{ caption.nama }}, Saya sedang belajar {{caption.belajar}}</p>
+            <p>Agama {{caption.nama}} adalah {{ caption.agama }} ini terletak di attribute
+                <code>{{caption.agama}}</code>
+            </p>
+        </div>
+    </div>
+
+    <!-- Aplikasi Vue -->
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                url: "https://www.petanikode.com/img/logo.svg",
+                caption: {
+                    attr: "title",
+                    text: "Hello ini adalah caption",
+                    nama: "Default Name",
+                    belajar: "Default Belajar",
+                    agama: "Islam"
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Vue #1</title>
+
+    <!-- Menyisipkan VueJs dari CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <!-- Element kontainer untuk aplikasi -->
+    <div id="app">
+        {{ message }}
+    </div>
+
+    <!-- Aplikasi Vue Hello -->
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                message: "Hello World"
+            }
+        })
+    </script>
+</body>
+
+</html>
